@@ -39,7 +39,6 @@ def train_on_policy_agent(env, agent, num_episodes):
                 transition_dict = {'states': [], 'actions': [], 'next_states': [], 'rewards': [], 'dones': []}
                 state = env.reset()
                 done = False
-                # 一局放入到一块数据里面
                 while not done:
                     action = agent.take_action(state)
                     next_state, reward, done, _, _ = env.step(action)
