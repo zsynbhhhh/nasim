@@ -59,6 +59,31 @@ AVAIL_STATIC_BENCHMARKS = {
         "step_limit": 2000,
         "max_score": 190
     },
+    "large": {
+        "file": osp.join(BENCHMARK_DIR, "large.yaml"),
+        "name": "large",
+        "step_limit": 6000,
+        "max_score": 195
+    },
+    "large-single-site": {
+        "file": osp.join(BENCHMARK_DIR, "large-single-site.yaml"),
+        "name": "large-single-site",
+        "step_limit": 6000
+    },
+    "large-multi-site": {
+        "file": osp.join(BENCHMARK_DIR, "large-multi-site.yaml"),
+        "name": "large-multi-site",
+        "step_limit": 8000
+    },
+    "huge": {
+        "file": osp.join(BENCHMARK_DIR, "huge.yaml"),
+        "name": "huge",
+        "step_limit": 10000,
+        "max_score": 195
+    }
+
+
+
 }
 
 AVAIL_BENCHMARKS = list(AVAIL_STATIC_BENCHMARKS.keys()) \
