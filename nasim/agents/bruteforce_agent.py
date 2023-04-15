@@ -100,7 +100,7 @@ def run_bruteforce_agent(env, step_limit=1e6, verbose=True):
 if __name__ == "__main__":
     import argparse
     parser = argparse.ArgumentParser()
-    parser.add_argument("env_name", type=str, help="benchmark scenario name")
+    # parser.add_argument("env_name", type=str, help="benchmark scenario name")
     parser.add_argument("-s", "--seed", type=int, default=0,
                         help="random seed")
     parser.add_argument("-o", "--partially_obs", action="store_true",
@@ -110,9 +110,9 @@ if __name__ == "__main__":
     parser.add_argument("-f", "--box_obs", action="store_true",
                         help="Use 2D observation space")
     args = parser.parse_args()
-
+    env_name = "tiny"
     nasimenv = nasim.make_benchmark(
-        args.env_name,
+        env_name,
         args.seed,
         not args.partially_obs,
         not args.param_actions,

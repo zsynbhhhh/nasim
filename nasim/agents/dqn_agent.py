@@ -343,7 +343,7 @@ class DQNAgent:
 if __name__ == "__main__":
     import argparse
     parser = argparse.ArgumentParser()
-    parser.add_argument("env_name", type=str, help="benchmark scenario name")
+    # parser.add_argument("env_name", type=str, help="benchmark scenario name")
     parser.add_argument("--render_eval", action="store_true",
                         help="Renders final policy")
     parser.add_argument("-o", "--partially_obs", action="store_true",
@@ -374,8 +374,8 @@ if __name__ == "__main__":
     parser.add_argument("--quite", action="store_false",
                         help="Run in Quite mode")
     args = parser.parse_args()
-
-    env = nasim.make_benchmark(args.env_name,
+    env_name = "tiny"
+    env = nasim.make_benchmark(env_name,
                                args.seed,
                                fully_obs=not args.partially_obs,
                                flat_actions=True,
