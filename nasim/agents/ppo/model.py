@@ -88,7 +88,9 @@ class PPO:
             critic_loss.backward()
             self.actor_optimizer.step()
             self.critic_optimizer.step()
-
+        # 释放显存
+        del states, actions, rewards, next_states, dones, td_target, td_delta, advantage, old_log_probs, log_probs, surr1, surr2
+        torch.cuda.empty_cache()  # 可选，释放未被清理的显存
 
 class PolocyNetContinuous(torch.nn.Module):
     def __init__(self, state_dim, hidden_dim, action_dim):
